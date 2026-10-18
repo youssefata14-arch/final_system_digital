@@ -1,0 +1,56 @@
+# ===================================================================
+#SGDC File for SYS_TOP
+# ===================================================================
+
+current_design "SYS_TOP"
+
+
+# 1. Top-Level External Clocks
+clock -name "REF_CLK"  -period 20      -edge "0" "10"       -domain REF_DOMAIN
+clock -name "UART_CLK" -period 271.267 -edge "0" "135.6335" -domain UART_DOMAIN
+
+# 2. Reset Constraint
+reset -name "RST_N" -value 0 -async
+
+# 3. Internal Derived Clocks
+clock -name "ALU_CLK"     -period 40       -edge "0" "20"        -domain REF_DOMAIN
+clock -name "UART_TX_CLK" -period 271.267  -edge "0" "135.6335"  -domain TX_DOMAIN
+clock -name "UART_RX_CLK" -period 271.267  -edge "0" "135.6335"  -domain RX_DOMAIN
+
+set_case_analysis -name "SYS_TOP.U0_RegFile.reg_file[2][0]" -value 1
+set_case_analysis -name "SYS_TOP.U0_RegFile.reg_file[2][1]" -value 1
+set_case_analysis -name "SYS_TOP.U0_RegFile.reg_file[2][2]" -value 1
+set_case_analysis -name "SYS_TOP.U0_RegFile.reg_file[2][3]" -value 1
+set_case_analysis -name "SYS_TOP.U0_RegFile.reg_file[2][4]" -value 1
+set_case_analysis -name "SYS_TOP.U0_RegFile.reg_file[2][5]" -value 1
+set_case_analysis -name "SYS_TOP.U0_RegFile.reg_file[2][6]" -value 1
+set_case_analysis -name "SYS_TOP.U0_RegFile.reg_file[2][7]" -value 1
+
+# Register 3 (e.g., UART / Clock Enable Configuration)
+set_case_analysis -name "SYS_TOP.U0_RegFile.reg_file[3][0]" -value 1
+set_case_analysis -name "SYS_TOP.U0_RegFile.reg_file[3][1]" -value 1
+set_case_analysis -name "SYS_TOP.U0_RegFile.reg_file[3][2]" -value 1
+set_case_analysis -name "SYS_TOP.U0_RegFile.reg_file[3][3]" -value 1
+set_case_analysis -name "SYS_TOP.U0_RegFile.reg_file[3][4]" -value 1
+set_case_analysis -name "SYS_TOP.U0_RegFile.reg_file[3][5]" -value 1
+set_case_analysis -name "SYS_TOP.U0_RegFile.reg_file[3][6]" -value 1
+set_case_analysis -name "SYS_TOP.U0_RegFile.reg_file[3][7]" -value 1
+
+# 5. Correct CDC Attributes
+cdc_attribute -unrelated SYS_TOP.U0_RegFile.reg_file[3][2] SYS_TOP.U0_UART.U0_UART_TX.ser_done
+cdc_attribute -unrelated SYS_TOP.U0_RegFile.reg_file[2][3] SYS_TOP.U0_UART.U0_UART_RX.sampled_bit
+
+# 6. Input / Output Constraints
+input  -name "RST_N"       -clock "none"
+input  -name "UART_RX_IN"   -clock "none"
+
+
+output -name "parity_error" -clock "UART_RX_CLK"
+output -name "STOP_error"   -clock "UART_RX_CLK"
+output -name "UART_TX_O"    -clock "UART_TX_CLK"
+
+
+cdc_attribute -unrelated {SYS_TOP.U0_FIFO.sync_w2r.sync_reg SYS_TOP.U0_FIFO.fifo_rd.rempty_val}
+cdc_attribute -unrelated {SYS_TOP.U0_FIFO.rq2_wptr SYS_TOP.U0_FIFO.rptr}
+
+

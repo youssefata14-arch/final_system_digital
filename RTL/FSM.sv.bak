@@ -1,0 +1,181 @@
+module FSM #(parameter Prescale_width = 6)
+(
+    input  wire           CLK,
+    input  wire           RST,
+    input  wire           RX_IN,
+    input  wire           PAR_EN,
+    input  wire [Prescale_width-1:0] Prescale,
+    input  wire [Prescale_width-1:0] edge_cnt,
+    input  wire [3:0]     bit_cnt,
+    input  wire           par_err,
+    input  wire           strt_glitch,
+    input  wire           stp_err,
+    
+    output reg            dat_samp_en,
+    output reg            enable,
+    output reg            deser_en,
+    output reg            par_chk_en,
+    output reg            strt_chk_en,
+    output reg            stp_chk_en,
+    output wire           data_valid   // now a registered (glitch-free) output
+);
+
+// ---------------------------------------------------------------
+// CDC FIX (Ac_glitch03):
+// The original design drove data_valid directly from a combinational
+// decode of the 3-bit state register (cs == VALID). Since data_valid
+// feeds an asynchronous CDC synchronizer (DATA_SYNC.sync_reg[0] in
+// REF_DOMAIN), a multi-bit combinational decode is not glitch-safe:
+// the individual state bits do not all switch at exactly the same
+// instant, so the async receiving flop could sample a transient value.
+//
+// Fix: keep the combinational decode internal (data_valid_comb) and
+// register it once more in this same clock domain (RX_CLK) before it
+// leaves the module. The synchronizer then samples a clean, single-flop
+// output instead of a multi-bit combinational decode.
+// ---------------------------------------------------------------
+reg data_valid_comb;
+reg data_valid_r;
+
+always @(posedge CLK or negedge RST) begin
+    if (!RST)
+        data_valid_r <= 1'b0;
+    else
+        data_valid_r <= data_valid_comb;
+end
+
+assign data_valid = data_valid_r;
+
+
+typedef enum bit [2:0] {
+    IDLE   = 3'b000,
+    START  = 3'b001,
+    DATA   = 3'b010,
+    PARITY = 3'b011,
+    STOP   = 3'b100,
+    VALID  = 3'b101
+} state_e;
+
+state_e cs, ns;
+
+    // *********** State Transition ********** //
+    always @(posedge CLK or negedge RST) begin
+        if (!RST)
+             cs <= IDLE;
+        else
+             cs <= ns;
+    end
+
+
+    // ********** Next State Logic ********** //
+
+always @(*) begin
+ case (cs)
+IDLE: begin
+                if (RX_IN == 1'b0)
+                    ns = START;
+                else
+                    ns = IDLE;
+     end
+     
+START: begin
+                if (edge_cnt == Prescale - 1) begin
+                    if (strt_glitch)
+                        ns = IDLE;
+                    else
+                        ns = DATA;
+                end else
+                    ns = START;
+          end
+        
+        
+DATA: begin
+if (bit_cnt == 4'd8 && edge_cnt == Prescale - 1) begin
+         if (PAR_EN)
+   ns = PARITY;
+       else
+   ns = STOP;
+     end else
+       ns = DATA;
+        end 
+       
+        
+PARITY: begin
+                if (edge_cnt == Prescale - 1)
+                    ns = STOP;
+                else
+                    ns = PARITY;
+            end
+  
+STOP: begin
+   if (edge_cnt == Prescale - 1) begin
+     if (stp_err || par_err)
+    ns = IDLE;
+      else
+    ns = VALID;
+   end else
+ ns = STOP;
+            end
+            
+            
+            
+            
+VALID: begin
+    if (RX_IN == 1'b0)
+    ns = START; 
+      else
+    ns = IDLE;
+            end
+   default: ns = IDLE;
+        endcase
+    end
+          
+          
+          // ********** Output Logic ********** //         
+
+always @(*) begin
+        dat_samp_en = 1'b0;
+        enable      = 1'b0;
+        deser_en    = 1'b0;
+        par_chk_en  = 1'b0;
+        strt_chk_en = 1'b0;
+        stp_chk_en  = 1'b0;
+        data_valid_comb = 1'b0;
+        
+        
+   case (cs)
+START: begin
+                enable      = 1'b1;
+                dat_samp_en = 1'b1;
+                if (edge_cnt == Prescale - 1)
+                    strt_chk_en = 1'b1;
+            end
+            
+DATA: begin
+                enable      = 1'b1;
+                dat_samp_en = 1'b1;
+                if (edge_cnt == Prescale - 1)
+                    deser_en = 1'b1;
+            end
+PARITY: begin
+                enable      = 1'b1;
+                dat_samp_en = 1'b1;
+                if (edge_cnt == Prescale - 1)
+                    par_chk_en = 1'b1;
+            end
+            
+STOP: begin
+                enable      = 1'b1;
+                dat_samp_en = 1'b1;
+             
+                    stp_chk_en = 1'b1;
+             end
+             
+             
+VALID: begin
+                data_valid_comb = 1'b1;
+            end
+        endcase
+    end
+
+endmodule
