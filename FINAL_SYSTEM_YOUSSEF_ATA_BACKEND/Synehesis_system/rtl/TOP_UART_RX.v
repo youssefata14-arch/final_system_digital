@@ -1,0 +1,126 @@
+module TOP_UART_RX #(parameter Prescale_width = 6)
+(
+    input  wire           CLK,
+    input  wire           RST,
+    input  wire           RX_IN,
+    input  wire [Prescale_width-1:0] Prescale,
+    input  wire           PAR_EN,
+    input  wire           PAR_TYP,
+    output wire [7:0]     P_DATA,
+    output wire           data_valid,
+    output wire           Parity_Error,
+    output wire           Stop_Error
+);
+
+wire [Prescale_width-1:0] edge_cnt;
+    wire [3:0]     bit_cnt;
+    wire           sampled_bit;
+    wire           dat_samp_en, enable, deser_en;
+    wire           par_chk_en, strt_chk_en, stp_chk_en;
+    wire           strt_glitch;
+
+// ---------------------------------------------------------------
+// CDC FIX (Ac_unsync01 / Ac_unsync02):
+// RX_IN is a truly asynchronous external signal (serial line coming
+// from outside the chip). It was previously fed raw into Data_Sampling
+// (samples[2:0]) and into FSM's combinational next-state logic (cs),
+// both flagged as unsynchronized crossings.
+//
+// Fix: synchronize RX_IN ONCE here with a 2-FF synchronizer, then
+// distribute the synchronized version (RX_IN_sync) to every block
+// below instead of the raw RX_IN.
+// ---------------------------------------------------------------
+    reg RX_IN_meta, RX_IN_sync;
+    always @(posedge CLK or negedge RST) begin
+        if (!RST) begin
+            RX_IN_meta <= 1'b1;   // UART idle line = high
+            RX_IN_sync <= 1'b1;
+        end else begin
+            RX_IN_meta <= RX_IN;
+            RX_IN_sync <= RX_IN_meta;
+        end
+    end
+
+Data_Sampling #(.Prescale_width(Prescale_width)) U0 
+(
+.CLK(CLK),
+.RST(RST),
+.RX_IN(RX_IN_sync),
+.Prescale(Prescale),
+.edge_cnt(edge_cnt),
+.dat_samp_en(dat_samp_en),
+.sampled_bit(sampled_bit)
+);
+
+
+edge_bit_counter #(.Prescale_width(Prescale_width)) U1 
+(
+.CLK(CLK), 
+.RST(RST),
+.enable(enable), 
+.Prescale(Prescale),
+.edge_cnt(edge_cnt), 
+.bit_cnt(bit_cnt)
+);
+
+
+Deserializer U2 (
+.CLK(CLK),
+.RST(RST), 
+.deser_en(deser_en),
+.sampled_bit(sampled_bit), 
+.P_DATA(P_DATA)
+  );
+  
+  
+Parity_Check U3 (
+.CLK(CLK), 
+.RST(RST), 
+.par_chk_en(par_chk_en), 
+.PAR_TYP(PAR_TYP),
+.sampled_bit(sampled_bit), 
+.P_DATA(P_DATA), 
+.par_err(Parity_Error)
+    );
+
+
+Start_Check U4 (
+.CLK(CLK), 
+.RST(RST), 
+.strt_chk_en(strt_chk_en),
+.sampled_bit(sampled_bit), 
+.strt_glitch(strt_glitch)
+    );
+    
+    
+Stop_Check U5 (
+.CLK(CLK), 
+.RST(RST), 
+.stp_chk_en(stp_chk_en),
+.sampled_bit(sampled_bit), 
+.stp_err(Stop_Error)
+    );
+    
+    
+FSM #(.Prescale_width(Prescale_width)) U6
+(
+.CLK(CLK), 
+.RST(RST), 
+.RX_IN(RX_IN_sync), 
+.PAR_EN(PAR_EN),
+.Prescale(Prescale), 
+.edge_cnt(edge_cnt), 
+.bit_cnt(bit_cnt),
+.par_err(Parity_Error), 
+.strt_glitch(strt_glitch), 
+.stp_err(Stop_Error),
+.dat_samp_en(dat_samp_en),
+.enable(enable), 
+.deser_en(deser_en),
+.par_chk_en(par_chk_en), 
+.strt_chk_en(strt_chk_en), 
+.stp_chk_en(stp_chk_en),
+.data_valid(data_valid)
+    );
+    
+  endmodule

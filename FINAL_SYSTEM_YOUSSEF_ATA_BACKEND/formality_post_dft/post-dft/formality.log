@@ -1,0 +1,72 @@
+Info:  Net Imp:/WORK/alu_edit_DW_div_uns_0/remainder[7] is undriven.
+Info:  Net Imp:/WORK/alu_edit_DW_div_uns_0/remainder[6] is undriven.
+Info:  Net Imp:/WORK/alu_edit_DW_div_uns_0/remainder[5] is undriven.
+Info:  Net Imp:/WORK/alu_edit_DW_div_uns_0/remainder[4] is undriven.
+Info:  Net Imp:/WORK/alu_edit_DW_div_uns_0/remainder[3] is undriven.
+Info:  Net Imp:/WORK/alu_edit_DW_div_uns_0/remainder[2] is undriven.
+Info:  Net Imp:/WORK/alu_edit_DW_div_uns_0/remainder[1] is undriven.
+Info:  Net Imp:/WORK/alu_edit_DW_div_uns_0/remainder[0] is undriven.
+Info:  Net Imp:/WORK/alu_edit_DW_div_uns_0/divide_by_0 is undriven.
+Info:  Net Imp:/WORK/alu_edit_DW01_sub_0/CO is undriven.
+Info:  Net Imp:/WORK/alu_edit_DW01_add_0/CO is undriven.
+Info:  Net Imp:/WORK/alu_edit_DW01_add_1/CO is undriven.
+Info:  guide_instance_map 2 (Line: 79)  Cannot find design reference 'SYS_TOP'.
+Info:  SVF Operation 2 (Line: 79) - instance_map.  Status: rejected
+
+Info:  guide_instance_map 3 (Line: 84)  Cannot find design reference 'SYS_TOP'.
+Info:  SVF Operation 3 (Line: 84) - instance_map.  Status: rejected
+
+Info:  guide_instance_map 4 (Line: 89)  Cannot find design reference 'SYS_TOP'.
+Info:  SVF Operation 4 (Line: 89) - instance_map.  Status: rejected
+
+Info:  guide_instance_map 5 (Line: 94)  Cannot find design reference 'SYS_TOP'.
+Info:  SVF Operation 5 (Line: 94) - instance_map.  Status: rejected
+
+Info:  guide_instance_map 6 (Line: 99)  Cannot find design reference 'SYS_TOP'.
+Info:  SVF Operation 6 (Line: 99) - instance_map.  Status: rejected
+
+Info:  guide_instance_map 10 (Line: 115)  Cannot find design reference 'SYS_TOP'.
+Info:  SVF Operation 10 (Line: 115) - instance_map.  Status: rejected
+
+Info:  guide_instance_map 11 (Line: 120)  Cannot find design reference 'SYS_TOP'.
+Info:  SVF Operation 11 (Line: 120) - instance_map.  Status: rejected
+
+Info:  guide_instance_map 12 (Line: 125)  Cannot find design reference 'SYS_TOP'.
+Info:  SVF Operation 12 (Line: 125) - instance_map.  Status: rejected
+
+Info:  guide_instance_map 13 (Line: 130)  Cannot find design reference 'SYS_TOP'.
+Info:  SVF Operation 13 (Line: 130) - instance_map.  Status: rejected
+
+Info:  guide_instance_map 14 (Line: 135)  Cannot find design reference 'SYS_TOP'.
+Info:  SVF Operation 14 (Line: 135) - instance_map.  Status: rejected
+
+Info:  guide_instance_map 18 (Line: 151)  Cannot find design reference 'SYS_TOP'.
+Info:  SVF Operation 18 (Line: 151) - instance_map.  Status: rejected
+
+Info:  guide_uniquify 55 (Line: 311)  Cannot find reference design 'SYS_TOP'.
+Info:  SVF Operation 55 (Line: 311) - uniquify.  Status: rejected
+
+Info:  guide_transformation 73 (Line: 564)  Rejected transformation 73 because design 'CLK_DIV_0' cannot be found.
+Info:  guide_transformation 73 (Line: 564) Retrying with unread processing enabled.
+Info:  guide_transformation 73 (Line: 564)  Rejected transformation 73 because design 'CLK_DIV_0' cannot be found.
+Info:  SVF Operation 73 (Line: 564) - transformation_share.  Status: rejected
+
+Info:  guide_uniquify 82 (Line: 664)  Cannot find reference design 'SYS_TOP'.
+Info:  SVF Operation 82 (Line: 664) - uniquify.  Status: rejected
+
+Info:  guide_uniquify 83 (Line: 674)  Cannot find reference design 'SYS_TOP'.
+Info:  SVF Operation 83 (Line: 674) - uniquify.  Status: rejected
+
+Info:  guide_uniquify 90 (Line: 707)  Cannot find reference design 'SYS_TOP'.
+Info:  SVF Operation 90 (Line: 707) - uniquify.  Status: rejected
+
+Info:  guide_multiplier 91 (Line: 711) operation could not find reference design 'SYS_TOP'.
+Info:  guide_multiplier 91 (Line: 711) operation could not find reference design 'SYS_TOP'.
+Info:  guide_multiplier 91 (Line: 711) operation could not find reference design 'SYS_TOP'.
+Info:  SVF Operation 91 (Line: 711) - multiplier.  Status: rejected
+
+Info:  guide_multiplier 92 (Line: 716) operation could not find reference design 'SYS_TOP'.
+Info:  guide_multiplier 92 (Line: 716) operation could not find reference design 'SYS_TOP'.
+Info:  guide_multiplier 92 (Line: 716) operation could not find reference design 'SYS_TOP'.
+Info:  SVF Operation 92 (Line: 716) - multiplier.  Status: rejected
+

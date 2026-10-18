@@ -1,0 +1,83 @@
+ 
+****************************************
+Report : area
+Design : SYS_TOP
+Version: O-2018.06-SP1
+Date   : Sat Oct  3 15:53:17 2026
+****************************************
+
+Library(s) Used:
+
+    scmetro_tsmc_cl013g_rvt_ss_1p08v_125c (File: /home/ICer/Labs/syn_system/std_cells/scmetro_tsmc_cl013g_rvt_ss_1p08v_125c.db)
+
+Number of ports:                          777
+Number of nets:                          3091
+Number of cells:                         2291
+Number of combinational cells:           1765
+Number of sequential cells:               486
+Number of macros/black boxes:               0
+Number of buf/inv:                        323
+Number of references:                      17
+
+Combinational area:              15400.649855
+Buf/Inv area:                     1553.244030
+Noncombinational area:           11521.069508
+Macro/Black Box area:                0.000000
+Net Interconnect area:          571389.570862
+
+Total cell area:                 26921.719362
+Total area:                     598311.290224
+
+Hierarchical area distribution
+------------------------------
+
+                                  Global cell area            Local cell area
+                                  -------------------  ------------------------------ 
+Hierarchical cell                 Absolute    Percent  Combi-      Noncombi-   Black-
+                                  Total       Total    national    national    boxes   Design
+--------------------------------  ----------  -------  ----------  ----------  ------  ------------------------------------
+SYS_TOP                           26921.7194    100.0     22.3573      0.0000  0.0000  SYS_TOP
+U0_ALU                             6336.5295     23.5   1249.6554    440.0858  0.0000  alu_edit
+U0_ALU/add_43                       231.8099      0.9    231.8099      0.0000  0.0000  alu_edit_DW01_add_0
+U0_ALU/div_52                      2003.9201      7.4   2003.9201      0.0000  0.0000  alu_edit_DW_div_uns_0
+U0_ALU/mult_49                     2147.4775      8.0   1908.6074      0.0000  0.0000  alu_edit_DW02_mult_0
+U0_ALU/mult_49/FS_1                 238.8701      0.9    238.8701      0.0000  0.0000  alu_edit_DW01_add_1
+U0_ALU/sub_46                       263.5808      1.0    263.5808      0.0000  0.0000  alu_edit_DW01_sub_0
+U0_CLKDIV_MUX                       132.9671      0.5    132.9671      0.0000  0.0000  CLOCK_DIV_MUX
+U0_CLK_GATE                          40.0078      0.1      0.0000     40.0078  0.0000  CLK_GATE
+U0_ClkDiv                           862.5211      3.2    522.4548    232.9866  0.0000  CLK_DIV_0
+U0_ClkDiv/r67                       107.0797      0.4    107.0797      0.0000  0.0000  CLK_DIV_0_DW01_inc_0
+U0_FIFO                            6445.9626     23.9     14.1204      0.0000  0.0000  ASYNC_FIFO_TOP_DATA_WIDTH8_ADDRSIZE4
+U0_FIFO/fifo_mem                   4892.7186     18.2   2181.6019   2711.1167  0.0000  FIFO_MEM_CNTRL_DATA_WIDTH8_ADDRSIZE4
+U0_FIFO/fifo_rd                     505.9810      1.9    221.2196    284.7614  0.0000  FIFO_RD_ADDRSIZE4
+U0_FIFO/fifo_wr                     498.9208      1.9    214.1594    284.7614  0.0000  FIFO_WR_ADDRSIZE4
+U0_FIFO/sync_r2w                    267.1109      1.0      8.2369    258.8740  0.0000  DF_SYNC_PTR_WIDTH5_0
+U0_FIFO/sync_w2r                    267.1109      1.0      8.2369    258.8740  0.0000  DF_SYNC_PTR_WIDTH5_1
+U0_PULSE_GEN                         57.6583      0.2      5.8835     51.7748  0.0000  pulse_gen
+U0_RST_SYNC                          61.1884      0.2      0.0000     61.1884  0.0000  RST_SYNC_NUM_STAGES2_0
+U0_RegFile                         6050.5914     22.5   2435.7691   3614.8224  0.0000  reg_file_edit
+U0_SYS_CTRL                        2440.4758      9.1   1051.9698   1388.5060  0.0000  sys_ctrl
+U0_UART                            3042.9462     11.3      9.4136      0.0000  0.0000  TOP_UART
+U0_UART/U0_UART_RX                 2201.6057      8.2      8.2369     51.7748  0.0000  TOP_UART_RX_Prescale_width6
+U0_UART/U0_UART_RX/U0               544.8121      2.0    467.1499     77.6622  0.0000  Data_Sampling_Prescale_width6
+U0_UART/U0_UART_RX/U1               628.3578      2.3    367.1304    261.2274  0.0000  edge_bit_counter_Prescale_width6
+U0_UART/U0_UART_RX/U2               309.4721      1.1    102.3729    207.0992  0.0000  Deserializer
+U0_UART/U0_UART_RX/U3               137.6739      0.5    110.6098     27.0641  0.0000  Parity_Check
+U0_UART/U0_UART_RX/U4                31.7709      0.1      5.8835     25.8874  0.0000  Start_Check
+U0_UART/U0_UART_RX/U5                31.7709      0.1      5.8835     25.8874  0.0000  Stop_Check
+U0_UART/U0_UART_RX/U6               457.7363      1.7    354.1867    103.5496  0.0000  FSM_Prescale_width6
+U0_UART/U0_UART_TX                  831.9269      3.1      7.0602      0.0000  0.0000  TOP_UART_TX_PARALLEL_DATA_WIDTH8
+U0_UART/U0_UART_TX/fsm_u0           160.0312      0.6     82.3690     77.6622  0.0000  FSM_tx
+U0_UART/U0_UART_TX/mux_u0            34.1243      0.1     34.1243      0.0000  0.0000  MUX
+U0_UART/U0_UART_TX/parity_u0        124.7302      0.5     98.8428     25.8874  0.0000  PARITY
+U0_UART/U0_UART_TX/ser_u0           505.9810      1.9    195.3322    310.6488  0.0000  SERIALIZER_DATA_WIDTH8
+U0_ref_sync                         410.6683      1.5    100.0195    310.6488  0.0000  DATA_SYNC_NUM_STAGES2_BUS_WIDTH8
+U1_ClkDiv                           862.5211      3.2    522.4548    232.9866  0.0000  CLK_DIV_1
+U1_ClkDiv/r67                       107.0797      0.4    107.0797      0.0000  0.0000  CLK_DIV_1_DW01_inc_0
+U1_RST_SYNC                          51.7748      0.2      0.0000     51.7748  0.0000  RST_SYNC_NUM_STAGES2_3
+U2_RST_SYNC                          51.7748      0.2      0.0000     51.7748  0.0000  RST_SYNC_NUM_STAGES2_2
+U3_RST_SYNC                          51.7748      0.2      0.0000     51.7748  0.0000  RST_SYNC_NUM_STAGES2_1
+--------------------------------  ----------  -------  ----------  ----------  ------  ------------------------------------
+Total                                                  15400.6499  11521.0695  0.0000
+
+1

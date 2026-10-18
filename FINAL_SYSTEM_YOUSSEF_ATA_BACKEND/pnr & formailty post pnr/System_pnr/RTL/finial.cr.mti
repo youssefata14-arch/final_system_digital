@@ -1,0 +1,211 @@
+{D:/digital crocodile/final/TOP_UART.v} {1 {vlog -work work {D:/digital crocodile/final/TOP_UART.v}
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module TOP_UART
+
+Top level modules:
+	TOP_UART
+
+} {} {}} {D:/digital crocodile/final/sys_ctrl.sv} {1 {vlog -work work -sv {D:/digital crocodile/final/sys_ctrl.sv}
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module sys_ctrl
+
+Top level modules:
+	sys_ctrl
+
+} {} {}} {D:/digital crocodile/final/Parity_Check.v} {1 {vlog -work work {D:/digital crocodile/final/Parity_Check.v}
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module Parity_Check
+
+Top level modules:
+	Parity_Check
+
+} {} {}} {D:/digital crocodile/final/DATA_SYNC.v} {1 {vlog -work work {D:/digital crocodile/final/DATA_SYNC.v}
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module DATA_SYNC
+
+Top level modules:
+	DATA_SYNC
+
+} {} {}} {D:/digital crocodile/final/DF_SYNC.v} {1 {vlog -work work {D:/digital crocodile/final/DF_SYNC.v}
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module DF_SYNC
+
+Top level modules:
+	DF_SYNC
+
+} {} {}} {D:/digital crocodile/final/TOP_UART_RX.v} {1 {vlog -work work {D:/digital crocodile/final/TOP_UART_RX.v}
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module TOP_UART_RX
+
+Top level modules:
+	TOP_UART_RX
+
+} {} {}} {D:/digital crocodile/final/alu_edit.v} {1 {vlog -work work {D:/digital crocodile/final/alu_edit.v}
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module alu_edit
+
+Top level modules:
+	alu_edit
+
+} {} {}} {D:/digital crocodile/final/CLOCK_DIV_MUX.v} {1 {vlog -work work {D:/digital crocodile/final/CLOCK_DIV_MUX.v}
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module CLOCK_DIV_MUX
+
+Top level modules:
+	CLOCK_DIV_MUX
+
+} {} {}} {D:/digital crocodile/final/FSM.sv} {1 {vlog -work work -sv {D:/digital crocodile/final/FSM.sv}
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module FSM
+
+Top level modules:
+	FSM
+
+} {} {}} {D:/digital crocodile/final/TOP_UART_TX.v} {1 {vlog -work work {D:/digital crocodile/final/TOP_UART_TX.v}
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module TOP_UART_TX
+
+Top level modules:
+	TOP_UART_TX
+
+} {} {}} {D:/digital crocodile/final/PARITY.v} {1 {vlog -work work {D:/digital crocodile/final/PARITY.v}
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module PARITY
+
+Top level modules:
+	PARITY
+
+} {} {}} {D:/digital crocodile/final/reg_file_edit.v} {1 {vlog -work work {D:/digital crocodile/final/reg_file_edit.v}
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module reg_file_edit
+
+Top level modules:
+	reg_file_edit
+
+} {} {}} {D:/digital crocodile/final/SERIALIZER.v} {1 {vlog -work work {D:/digital crocodile/final/SERIALIZER.v}
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module SERIALIZER
+
+Top level modules:
+	SERIALIZER
+
+} {} {}} {D:/digital crocodile/final/pulse_gen.v} {1 {vlog -work work {D:/digital crocodile/final/pulse_gen.v}
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module pulse_gen
+
+Top level modules:
+	pulse_gen
+
+} {} {}} {D:/digital crocodile/final/MUX.v} {1 {vlog -work work {D:/digital crocodile/final/MUX.v}
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module MUX
+
+Top level modules:
+	MUX
+
+} {} {}} {D:/digital crocodile/final/edge_bit_counter.v} {1 {vlog -work work {D:/digital crocodile/final/edge_bit_counter.v}
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module edge_bit_counter
+
+Top level modules:
+	edge_bit_counter
+
+} {} {}} {D:/digital crocodile/final/ASYNC_FIFO_TOP.v} {1 {vlog -work work {D:/digital crocodile/final/ASYNC_FIFO_TOP.v}
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module ASYNC_FIFO_TOP
+
+Top level modules:
+	ASYNC_FIFO_TOP
+
+} {} {}} {D:/digital crocodile/final/FIFO_WR.v} {1 {vlog -work work {D:/digital crocodile/final/FIFO_WR.v}
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module FIFO_WR
+
+Top level modules:
+	FIFO_WR
+
+} {} {}} {D:/digital crocodile/final/Data_Sampling.v} {1 {vlog -work work {D:/digital crocodile/final/Data_Sampling.v}
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module Data_Sampling
+
+Top level modules:
+	Data_Sampling
+
+} {} {}} {D:/digital crocodile/final/FIFO_MEM_CNTRL.v} {1 {vlog -work work {D:/digital crocodile/final/FIFO_MEM_CNTRL.v}
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module FIFO_MEM_CNTRL
+
+Top level modules:
+	FIFO_MEM_CNTRL
+
+} {} {}} {D:/digital crocodile/final/RST_SYNC.v} {1 {vlog -work work {D:/digital crocodile/final/RST_SYNC.v}
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module RST_SYNC
+
+Top level modules:
+	RST_SYNC
+
+} {} {}} {D:/digital crocodile/final/SYS_TOP.v} {1 {vlog -work work {D:/digital crocodile/final/SYS_TOP.v}
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module SYS_TOP
+
+Top level modules:
+	SYS_TOP
+
+} {} {}} {D:/digital crocodile/final/FIFO_RD.v} {1 {vlog -work work {D:/digital crocodile/final/FIFO_RD.v}
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module FIFO_RD
+
+Top level modules:
+	FIFO_RD
+
+} {} {}} {D:/digital crocodile/final/CLK_GATE.v} {1 {vlog -work work {D:/digital crocodile/final/CLK_GATE.v}
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module CLK_GATE
+
+Top level modules:
+	CLK_GATE
+
+} {} {}} {D:/digital crocodile/final/Stop_Check.v} {1 {vlog -work work {D:/digital crocodile/final/Stop_Check.v}
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module Stop_Check
+
+Top level modules:
+	Stop_Check
+
+} {} {}} {D:/digital crocodile/final/Start_Check.v} {1 {vlog -work work {D:/digital crocodile/final/Start_Check.v}
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module Start_Check
+
+Top level modules:
+	Start_Check
+
+} {} {}} {D:/digital crocodile/final/Deserializer.v} {1 {vlog -work work {D:/digital crocodile/final/Deserializer.v}
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module Deserializer
+
+Top level modules:
+	Deserializer
+
+} {} {}} {D:/digital crocodile/final/CLK_DIV.v} {1 {vlog -work work {D:/digital crocodile/final/CLK_DIV.v}
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module CLK_DIV
+
+Top level modules:
+	CLK_DIV
+
+} {} {}} {D:/digital crocodile/final/FSM_tx.sv} {1 {vlog -work work -sv {D:/digital crocodile/final/FSM_tx.sv}
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module FSM_tx
+
+Top level modules:
+	FSM_tx
+
+} {} {}} {D:/digital crocodile/final/sys_tb.v} {1 {vlog -work work {D:/digital crocodile/final/sys_tb.v}
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module sys_tb
+
+Top level modules:
+	sys_tb
+
+} {} {}}

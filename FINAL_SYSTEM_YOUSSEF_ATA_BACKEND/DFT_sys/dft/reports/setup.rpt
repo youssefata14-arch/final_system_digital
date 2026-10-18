@@ -1,0 +1,101 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : SYS_TOP_dft
+Version: O-2018.06-SP1
+Date   : Tue Oct  6 16:13:50 2026
+****************************************
+
+Operating Conditions: scmetro_tsmc_cl013g_rvt_ss_1p08v_125c   Library: scmetro_tsmc_cl013g_rvt_ss_1p08v_125c
+Wire Load Model Mode: top
+
+  Startpoint: U0_ALU/ALU_OUT_reg_0_
+              (rising edge-triggered flip-flop clocked by ALU_CLK)
+  Endpoint: U0_ALU/ALU_OUT_reg_1_
+            (rising edge-triggered flip-flop clocked by ALU_CLK)
+  Path Group: ALU_CLK
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  SYS_TOP_dft        tsmc13_wl30           scmetro_tsmc_cl013g_rvt_ss_1p08v_125c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock ALU_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  U0_ALU/ALU_OUT_reg_0_/CK (SDFFRQX2M)                    0.00       0.00 r
+  U0_ALU/ALU_OUT_reg_0_/Q (SDFFRQX2M)                     0.62       0.62 f
+  U0_ALU/ALU_OUT_reg_1_/SI (SDFFRQX2M)                    0.00       0.62 f
+  data arrival time                                                  0.62
+
+  clock ALU_CLK (rise edge)                              20.00      20.00
+  clock network delay (ideal)                             0.00      20.00
+  U0_ALU/ALU_OUT_reg_1_/CK (SDFFRQX2M)                    0.00      20.00 r
+  library setup time                                     -0.57      19.43
+  data required time                                                19.43
+  --------------------------------------------------------------------------
+  data required time                                                19.43
+  data arrival time                                                 -0.62
+  --------------------------------------------------------------------------
+  slack (MET)                                                       18.81
+
+
+  Startpoint: SE (input port clocked by scan_clk)
+  Endpoint: U1_ClkDiv/counter_reg_3_
+            (rising edge-triggered flip-flop clocked by scan_clk)
+  Path Group: scan_clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  SYS_TOP_dft        tsmc13_wl30           scmetro_tsmc_cl013g_rvt_ss_1p08v_125c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock scan_clk (rise edge)                              0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                   40.00      40.00 r
+  SE (in)                                                 0.66      40.66 r
+  U23/Y (DLY1X1M)                                         0.88      41.53 r
+  U26/Y (INVXLM)                                          0.55      42.08 f
+  U18/Y (DLY1X1M)                                         0.83      42.91 f
+  U22/Y (INVXLM)                                          0.62      43.53 r
+  U24/Y (DLY1X1M)                                         0.88      44.41 r
+  U25/Y (INVXLM)                                          0.55      44.95 f
+  U32/Y (DLY1X1M)                                         0.83      45.78 f
+  U62/Y (INVXLM)                                          0.62      46.40 r
+  U46/Y (INVXLM)                                          0.48      46.88 f
+  U38/Y (INVXLM)                                          0.58      47.46 r
+  U29/Y (DLY1X1M)                                         0.88      48.34 r
+  U39/Y (INVXLM)                                          0.55      48.88 f
+  U30/Y (DLY1X1M)                                         0.83      49.71 f
+  U47/Y (INVXLM)                                          0.62      50.33 r
+  U59/Y (INVXLM)                                          0.48      50.81 f
+  U33/Y (DLY1X1M)                                         0.81      51.62 f
+  U61/Y (INVXLM)                                          0.62      52.25 r
+  U44/Y (DLY1X1M)                                         0.88      53.12 r
+  U1_ClkDiv/test_se (CLK_DIV_test_1)                      0.00      53.12 r
+  U1_ClkDiv/U105/Y (DLY1X1M)                              0.88      54.00 r
+  U1_ClkDiv/U109/Y (DLY1X1M)                              0.89      54.89 r
+  U1_ClkDiv/U106/Y (DLY1X1M)                              0.90      55.78 r
+  U1_ClkDiv/counter_reg_3_/SE (SDFFRQX1M)                 0.00      55.78 r
+  data arrival time                                                 55.78
+
+  clock scan_clk (rise edge)                            200.00     200.00
+  clock network delay (ideal)                             0.00     200.00
+  clock uncertainty                                      -0.20     199.80
+  U1_ClkDiv/counter_reg_3_/CK (SDFFRQX1M)                 0.00     199.80 r
+  library setup time                                     -0.60     199.20
+  data required time                                               199.20
+  --------------------------------------------------------------------------
+  data required time                                               199.20
+  data arrival time                                                -55.78
+  --------------------------------------------------------------------------
+  slack (MET)                                                      143.42
+
+
+1
